@@ -1,5 +1,5 @@
 <template>
-  <div class="day column">
+  <div class="day column" @click="setActiveDay(day.id)">
     <div class="day-banner has-text-centered">{{ day.abbvTitle }}</div>
     <div class="day-details">
       <div class="day-number">{{ day.id }}</div>
@@ -11,10 +11,18 @@
 
 <script>
 import CalendarEvent from "./CalendarEvent.vue";
+import { store } from "../store";
 
 export default {
   name: "CalendarDay",
   props: ["day"],
+
+  methods: {
+    setActiveDay(dayId) {
+      store.setActiveDay(dayId);
+    }
+  },
+
   components: {
     CalendarEvent
   }
