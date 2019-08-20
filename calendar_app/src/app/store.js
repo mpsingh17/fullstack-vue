@@ -13,5 +13,12 @@ export const store = {
 				? (dayObj.active = true)
 				: (dayObj.active = false);
 		});
+	},
+	submitEvent(eventDetails) {
+		const activeDay = this.getActiveDay();
+		activeDay.events.push({
+			details: eventDetails,
+			edit: false
+		});
 	}
 };
