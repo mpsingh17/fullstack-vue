@@ -20,5 +20,20 @@ export const store = {
 			details: eventDetails,
 			edit: false
 		});
+	},
+	editEvent(dayId, eventDetails) {
+		this.resetEditOfAllEvents();
+		const dayObj = this.state.seedData.find(day => day.id === dayId);
+		const eventObj = dayObj.events.find(
+			event => event.details === eventDetails
+		);
+		eventObj.edit = true;
+	},
+	resetEditOfAllEvents() {
+		this.state.seedData.map(dayObj => {
+			dayObj.events.map(event => {
+				event.edit = false;
+			});
+		});
 	}
 };
