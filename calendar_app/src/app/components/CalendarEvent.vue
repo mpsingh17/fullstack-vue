@@ -9,8 +9,11 @@
     </div>
 
     <div v-if="event.edit">
-      <input type="text" :placeholder="event.details" />
-      <div class="has-text-centered icons">
+      <input type="text" :placeholder="event.details" v-model="newEventDetails" />
+      <div
+        class="has-text-centered icons"
+        @click="updateEvent(day.id, event.details, newEventDetails)"
+      >
         <i class="fa fa-check"></i>
       </div>
     </div>
@@ -22,6 +25,11 @@ import { store } from "../store.js";
 
 export default {
   name: "CalendarEvent",
+  data() {
+    return {
+      newEventDetails: ""
+    };
+  },
   props: ["event", "day"],
   computed: {
     getEventBackgroundColor() {
@@ -33,6 +41,11 @@ export default {
   methods: {
     editEvent(dayId, eventDetails) {
       store.editEvent(dayId, eventDetails);
+    },
+    updateEvent(dayId, oldEventDetails, newEventDetails) {
+      if (newEventDetails === "") newEventDetails = oldEventDetails;
+      store.updateEvent(dayId, oldEventDetails, newEventDetails);
+      this.newEventDetails = "";
     }
   }
 };
