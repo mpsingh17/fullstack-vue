@@ -11,7 +11,7 @@ const mutations = {
 const actions = {
 	getProductItems({ commit }) {
 		axios.get("/api/products").then(res => {
-			commit.UPDATE_PRODUCT_ITEMS(res.data);
+			commit("UPDATE_PRODUCT_ITEMS", res.data);
 		});
 	}
 };
