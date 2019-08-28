@@ -1,1 +1,9 @@
-[]
+[
+    {
+        "id": 2,
+        "title": "The Fullstack Tee",
+        "description": "The original Fullstack clothing item. Always prepared to keep your style in check.",
+        "price": 15.99,
+        "quantity": 1
+    }
+]
