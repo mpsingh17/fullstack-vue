@@ -12,5 +12,12 @@
         "description": "Stay comfortable and cool with the first Fullstack Fitted Cap, featuring a normal bill and medium crown.",
         "price": 15.99,
         "quantity": 2
+    },
+    {
+        "id": 2,
+        "title": "The Fullstack Tee",
+        "description": "The original Fullstack clothing item. Always prepared to keep your style in check.",
+        "price": 15.99,
+        "quantity": 3
     }
 ]
