@@ -1,11 +1,12 @@
 import axios from "axios";
+import * as types from "./mutation-types";
 
 const state = {
 	cartItems: []
 };
 
 const mutations = {
-	UPDATE_CART_ITEMS(state, payload) {
+	[types.UPDATE_CART_ITEMS](state, payload) {
 		state.cartItems = payload;
 	}
 };
@@ -13,22 +14,22 @@ const mutations = {
 const actions = {
 	getCartItems({ commit }) {
 		axios.get("/api/cart").then(res => {
-			commit("UPDATE_CART_ITEMS", res.data);
+			commit(types.UPDATE_CART_ITEMS, res.data);
 		});
 	},
 	addCartItem({ commit }, cartItem) {
 		axios.post("/api/cart", cartItem).then(response => {
-			commit("UPDATE_CART_ITEMS", response.data);
+			commit(types.UPDATE_CART_ITEMS, response.data);
 		});
 	},
 	removeCartItem({ commit }, cartItem) {
 		axios.post("/api/cart/delete", cartItem).then(response => {
-			commit("UPDATE_CART_ITEMS", response.data);
+			commit(types.UPDATE_CART_ITEMS, response.data);
 		});
 	},
 	removeAllCartItems({ commit }) {
 		axios.post("/api/cart/delete/all").then(response => {
-			commit("UPDATE_CART_ITEMS", response.data);
+			commit(types.UPDATE_CART_ITEMS, response.data);
 		});
 	}
 };
