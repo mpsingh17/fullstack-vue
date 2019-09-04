@@ -1,12 +1,12 @@
 import Vue from "vue";
 import VueRouter from "vue-router";
-import CartList from "../components/cart/CartList";
-import ProductList from "../components/product/ProductList";
-import NotFound from "../components/NotFound";
+import CartList from "../components/cart/CartList.vue";
+import ProductList from "../components/product/ProductList.vue";
+import NotFound from "../components/NotFound.vue";
 
 Vue.use(VueRouter);
 
-export const router = new VueRouter({
+const router = new VueRouter({
 	mode: "history",
 	routes: [
 		{
@@ -27,3 +27,5 @@ export const router = new VueRouter({
 		}
 	]
 });
+
+export default router;

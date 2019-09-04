@@ -2,11 +2,8 @@
   <div id="app">
     <div class="container">
       <div class="columns">
-        <div class="column is-3">
-          <CartList />
-        </div>
-        <div class="column is-9">
-          <ProductList />
+        <div class="column is-6 column--align-center">
+          <router-view></router-view>
         </div>
       </div>
     </div>
@@ -14,22 +11,16 @@
 </template>
 
 <script>
-import CartList from './components/cart/CartList';
-import ProductList from './components/product/ProductList';
-
 export default {
-  name: 'App',
-  components: {
-    CartList,
-    ProductList
-  }
-}
+  name: "App"
+};
 </script>
 
 <style>
-html, body {
+html,
+body {
   height: 100%;
-  background: #F2F6FA;
+  background: #f2f6fa;
 }
 
 #app {
