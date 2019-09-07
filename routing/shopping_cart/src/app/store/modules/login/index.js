@@ -1,12 +1,12 @@
 import axios from "axios";
 
 const state = {
-	login: null
+	token: null
 };
 
 const mutations = {
 	SET_TOKEN(state, token) {
-		state.token = toke;
+		state.token = token;
 	}
 };
 

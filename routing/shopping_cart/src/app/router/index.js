@@ -3,6 +3,7 @@ import VueRouter from "vue-router";
 import CartList from "../components/cart/CartList.vue";
 import ProductList from "../components/product/ProductList.vue";
 import ProductItem from "../components/product/ProductItem.vue";
+import Login from "../components/login/LoginBox.vue";
 import NotFound from "../components/NotFound.vue";
 
 Vue.use(VueRouter);
@@ -26,6 +27,10 @@ const router = new VueRouter({
 			path: "/products/:id",
 			component: ProductItem,
 			props: true
+		},
+		{
+			path: "/login",
+			component: Login
 		},
 		{
 			path: "*",
